@@ -101,12 +101,12 @@ def generate_launch_description():
         name='vesc_driver_node',
         parameters=[LaunchConfiguration('vesc_config')]
     )
-    throttle_interpolator_node = Node(
-        package='f1tenth_stack',
-        executable='throttle_interpolator',
-        name='throttle_interpolator',
-        parameters=[LaunchConfiguration('vesc_config')]
-    )
+#    throttle_interpolator_node = Node(
+#        package='f1tenth_stack',
+#        executable='throttle_interpolator',
+#        name='throttle_interpolator',
+#        parameters=[LaunchConfiguration('vesc_config')]
+#    )
 #    urg_node = Node(
 #        package='urg_node',
 #        executable='urg_node_driver',
@@ -124,7 +124,7 @@ def generate_launch_description():
         package='tf2_ros',
         executable='static_transform_publisher',
         name='static_baselink_to_laser',
-        arguments=['0.27', '0.0', '0.11', '0.0', '0.0', '0.0', 'base_link', 'laser']
+        arguments=['0.27', '0.0', '0.11', '3.14', '0.0', '3.14', 'base_link', 'laser']
     )
 
     # finalize

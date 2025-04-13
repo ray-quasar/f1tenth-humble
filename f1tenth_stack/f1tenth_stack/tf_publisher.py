@@ -19,10 +19,14 @@ class FramePublisher(Node):
         t.transform.translation.x = 0.27
         t.transform.translation.y = 0.0
         t.transform.translation.z = 0.11
+        
+        
+    	# 180-degree rotation around the z-axis (in radians)
         t.transform.rotation.x = 0.0
         t.transform.rotation.y = 0.0
-        t.transform.rotation.z = 0.0
-        t.transform.rotation.w = 1.0
+        t.transform.rotation.z = 1.0  # sin(pi/2) = 1.0
+        t.transform.rotation.w = 0.0  # cos(pi/2) = 0.0
+    
         self.br.sendTransform(t)
 
         t2 = TransformStamped()
