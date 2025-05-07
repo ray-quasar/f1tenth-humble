@@ -5,13 +5,12 @@ ackermann_mux:
         topic   : drive
         timeout : 0.2
         priority: 10
-        # lock    : nav_control  # Lock controlled by nav_control topic
       joystick:
         topic   : teleop
         timeout : 0.2
         priority: 100
-    locks:
-      nav_control:
-        topic: nav_control  
-        timeout: 0.2
-        priority: 50
+    # locks:
+    #   nav_control:
+    #     topic: nav_control  
+    #     timeout: 0.2
+    #     priority: 50`
