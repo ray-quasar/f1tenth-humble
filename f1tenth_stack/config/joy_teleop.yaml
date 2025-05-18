@@ -9,20 +9,6 @@ joy:
 
 joy_teleop:
   ros__parameters:
-  #  default:
-  #   type: topic
-  #   interface_type: ackermann_msgs/msg/AckermannDriveStamped
-  #   topic_name: teleop
-  #   axis_mappings:
-  #     drive-speed:
-  #       axis: 3
-  #       scale: 0.0
-  #       offset: 0.0
-  #     drive-steering_angle:
-  #       axis: 0
-  #       scale: 0.0
-  #       offset: 0.0
-
     human_control:
       type: topic
       interface_type: ackermann_msgs/msg/AckermannDriveStamped
@@ -30,11 +16,12 @@ joy_teleop:
       deadman_buttons: [6]
       axis_mappings:
         drive-speed:
-          axis: 3
-          scale: 3.0
-          offset: 0.0
+          trigger_axis: 4  # Right Trigger
+          direction_axis: 1  # Left Joystick, y-axis
+          scale: 1.0
+          offset: 1.0  # Needed to normalize trigger value
         drive-steering_angle:
-          axis: 0
+          axis: 0  # Left Joystick, x-axis
           scale: 0.34
           offset: 0.0
 
