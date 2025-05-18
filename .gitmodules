@@ -8,5 +8,5 @@
 	branch = foxy-devel
 [submodule "teleop_tools"]
 	path = teleop_tools
-	url = https://github.com/ray-quasar/teleop_tools
+	url = git@github.com:ray-quasar/teleop_tools.git
 	branch = master
