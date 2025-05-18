@@ -24,7 +24,7 @@ class FramePublisher(Node):
     	# 180-degree rotation around the z-axis (in radians)
         t.transform.rotation.x = 0.0
         t.transform.rotation.y = 0.0
-        t.transform.rotation.z = 1.0  # sin(pi/2) = 1.0
+        t.transform.rotation.z = 0.0 # 1.0  # sin(pi/2) = 1.0
         t.transform.rotation.w = 0.0  # cos(pi/2) = 0.0
     
         self.br.sendTransform(t)

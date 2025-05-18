@@ -1,6 +1,6 @@
 [submodule "vesc"]
 	path = vesc
-	url = https://github.com/f1tenth/vesc.git
+	url = git@github.com:ray-quasar/vesc.git
 	branch = humble
 [submodule "ackermann_mux"]
 	path = ackermann_mux
@@ -8,5 +8,5 @@
 	branch = foxy-devel
 [submodule "teleop_tools"]
 	path = teleop_tools
-	url = https://github.com/f1tenth/teleop_tools.git
-	branch = foxy-devel
+	url = https://github.com/ros-teleop/teleop_tools.git
+	branch = master

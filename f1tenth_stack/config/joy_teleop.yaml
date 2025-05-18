@@ -15,7 +15,7 @@ joy_teleop:
   #   topic_name: teleop
   #   axis_mappings:
   #     drive-speed:
-  #       axis: 4
+  #       axis: 3
   #       scale: 0.0
   #       offset: 0.0
   #     drive-steering_angle:
@@ -31,18 +31,43 @@ joy_teleop:
       axis_mappings:
         drive-speed:
           axis: 3
-          scale: 1.0
+          scale: 3.0
           offset: 0.0
         drive-steering_angle:
           axis: 0
           scale: 0.34
           offset: 0.0
 
-    autonomous_control:
+    # Nav Control parameter buttons
+    motor_toggle: 
       type: topic
-      interface_type: std_msgs/msg/Bool
+      interface_type: std_msgs/msg/UInt8
       topic_name: nav_control
-      buttons: [7]
+      deadman_buttons: [0] # A Button : 0
       message_value:
         data: 
-          value: false
+          value: 1
+    e_stop:
+      type: topic
+      interface_type: std_msgs/msg/UInt8
+      topic_name: nav_control
+      deadman_buttons: [1] # B Button : 1
+      message_value:
+        data:
+          value: 2
+    enable_logging:
+      type: topic
+      interface_type: std_msgs/msg/UInt8
+      topic_name: nav_control
+      deadman_buttons: [3] # X Button : 3
+      message_value: 
+        data:
+          value: 3
+    enable_visualization:
+      type: topic
+      interface_type: std_msgs/msg/UInt8
+      topic_name: nav_control
+      deadman_buttons: [4] # Y Button : 4
+      message_value:
+        data:
+          value: 4
