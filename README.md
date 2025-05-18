@@ -5,46 +5,6 @@ Drivers onboard f1tenth race cars. This branch is under development for migratio
 ## Deadman's switch
 On Logitech F-710 joysticks, the LB button is the deadman's switch for teleop, and the RB button is the deadman's switch for navigation. You can also remap buttons. See how on the readthedocs documentation.
 
-## Sick Lidar
-
-Note that sick_scan_xd does not have an apt package for ROS2 foxy, you can try installing [from source](https://github.com/SICKAG/sick_scan_xd). Follow these steps to install sick_scan_xd on Linux for ROS 2 Humble:
-
-```
-sudo apt update
-sudo apt-get install ros-humble-sick-scan-xd
-```
-
-Change the sick lidar ip address at `/opt/ros/humble/share/sick_scan_xd/launch/sick_tim_5xx.launch`
-
-Bring up with `ros2 launch f1tenth_stack sick_bringup_launch.py`
-
-See the [documentation of F1TENTH](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/firmware/index.html) on how to get started.
-
-### Getting SICK Lidar IP
-
-The lidar is delivered with a standard IP address. There are two ways to read or change the IP address:
-
-1. **Using a Windows Computer :** Install [SICK SOPAS ET](https://www.sick.com/de/de/sopas-engineering-tool-2018/p/p367244) and follow [the instructions in the sick_scan_xd package](https://github.com/SICKAG/sick_scan_xd?tab=readme-ov-file#starting-with-a-new-lidar).
-
-2. **Using a Linux Computer :** You can scan the network for the lidar IP address using the following command:
-
-```bash
-nmap -sn
-```
-
-If you have a SICK lidar connected to the network, you will see the IP address of the lidar in the output.
-
-## Topics
-
-### Topics that the driver stack subscribe to
-- `/drive`: Topic for autonomous navigation, uses `AckermannDriveStamped` messages.
-
-### Sensor topics published by the driver stack
-- `/scan`: Topic for `LaserScan` messages.
-- `/odom`: Topic for `Odometry` messages.
-- `/sensors/imu/raw`: Topic for `Imu` messages.
-- `/sensors/core`: Topic for telemetry data from the VESC
-
 ## External Dependencies
 
 1. ackermann_msgs [https://index.ros.org/r/ackermann_msgs/#humble](https://index.ros.org/r/ackermann_msgs/#humble).
