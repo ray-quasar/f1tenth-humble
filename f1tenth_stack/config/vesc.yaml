@@ -9,7 +9,10 @@
     steering_angle_to_servo_gain: -1.2135
     steering_angle_to_servo_offset: 0.59
 
-    vel_diff_thresh: 0.1
+    brake_deadzone: 0.1
+
+    accel_to_current_gain: 0.0
+    accel_to_brake_gain: 0.0
 
     port: /dev/sensors/vesc
     duty_cycle_min: 0.0
