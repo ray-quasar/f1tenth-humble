@@ -5,12 +5,20 @@
     speed_to_erpm_gain: 4214.0
     speed_to_erpm_offset: 0.0
 
+    # VEL_TO_ERPM mode braking parameters
+    speed_to_braking_gain: 1.0
+    speed_to_braking_center: 4.0
+    speed_to_braking_max: 1000.0
+    speed_to_braking_min: 0.0
+
     # servo value (0 to 1) =  steering_angle_to_servo_gain * steering angle (radians) + steering_angle_to_servo_offset
     steering_angle_to_servo_gain: -1.2135
     steering_angle_to_servo_offset: 0.59
 
+    # Unused for now, going to try just sigmoid braking curve first
     brake_deadzone: 0.1
 
+    # LEAVE THESE AT ZERO UNLESS YOU ABSOLUTELY KNOW WHAT YOU ARE DOING
     accel_to_current_gain: 0.0
     accel_to_brake_gain: 0.0
 
